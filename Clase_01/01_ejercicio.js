@@ -101,3 +101,11 @@ console.log(suma(3, 5)); // 8
 console.log(`El resultado de la suma es: ${suma2(3, 5)}`); // 8
 
 
+/*
+card: 1
+descripcion: ${}
+precio: ${}
+stock: ${}
+*/
+
+
