@@ -44,7 +44,6 @@ const funcionAsincronica = async (a, b) => {
         return resultado2;
     } catch (error) {
         console.log("Error: ", error);
-
     }
 }
 
