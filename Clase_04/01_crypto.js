@@ -4,7 +4,7 @@ class UserManager {
     static usuarios = []
 
     // Método para hashear la contraseña
-    static hashPassword(password) {
+    hashPassword(password) {
         return crypto.createHash('sha256').update(password).digest('hex');
     }
 
