@@ -1,34 +1,23 @@
-import express from 'express';
-
-const app = express();
+import { Router } from 'express';
 
 
-// Middlewares de configuracion
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }))
+const router = Router();
 
 
-const PORT = 9090
 
-
-// APis
-
-// enpoint de telemetria
-app.get('/ping', (req, res) => {
-    res.send('pong');
-})
-
-
+/*=============================================
+=                   APIs                     =
+=============================================*/
 let users = []
 
 // LISTAR
-app.get('/api/users', (req, res) => {
+router.get('/', (req, res) => {
     res.send(users)
 })
 
 
 // CREAR
-app.post('/api/users', (req, res) => {
+router.post('/', (req, res) => {
     // console.log(req.body);
     let user = req.body
 
@@ -48,7 +37,7 @@ app.post('/api/users', (req, res) => {
 
 
 // ACTUALIZAR
-app.put('/api/users/:userId', (req, res) => {
+router.put('/:userId', (req, res) => {
     // console.log(req.body);
     let userId = parseInt(req.params.userId)
     let userUpdated = req.body
@@ -66,7 +55,7 @@ app.put('/api/users/:userId', (req, res) => {
 
 
 // ELIMINAR
-app.delete('/api/users/:userId', (req, res) => {
+router.delete('/:userId', (req, res) => {
     // console.log(req.body);
     let userId = parseInt(req.params.userId)
 
@@ -85,30 +74,6 @@ app.delete('/api/users/:userId', (req, res) => {
 
 
 
-app.listen(PORT, () => {
-    console.log(`Server corriendo en el puerto ${PORT}`);
-})
 
-
-
-
-
-// // Carrito:
-// let carritos = [
-//     {
-//         id: '456',
-//         productos: [{ id: 1, quantity: 2 }, { id: 2, quantity: 1 }]
-//     },
-//     {
-//         id: '789',
-//         productos: [{ id: 3 }, { id: 6 }]
-//     },
-//     {
-//         id: '123',
-//         productos: [{ id: 4 }, { id: 5 }]
-//     },
-//     {
-//         id: '987',
-//         productos: []
-//     }
-// ]
+// export
+export default router;
