@@ -1,0 +1,22 @@
+<div>
+    <h1>Hola, {{user.name}}</h1>
+
+    {{!-- si isAdmin = true -> entonces muestro los productos --}}
+    {{#if isAdmin}}
+
+    {{!-- iteramos el array --}}
+    {{#each food}}
+    <div>
+        <p> Nombre: {{this.name}}</p>
+        <p> Precio: {{this.price}}</p>
+    </div>
+    {{/each}}
+
+    {{!-- si isAdmin = falso -> entonces no tiene permisos --}}
+    {{else}}
+    <p>No tienes los permisos necesarios!!</p>
+    {{/if}}
+
+</div>
+
+<script src="/js/index.js"></script>

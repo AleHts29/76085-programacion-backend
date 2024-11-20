@@ -11,6 +11,7 @@ const productManager = new ProductManager()
 
 // Todas las APIs
 // Listar
+// http://localhost:9090/api/products?limit=1
 router.get('/', async (req, res) => {
     try {
         const limit = req.query.limit ? parseInt(req.query.limit) : undefined
