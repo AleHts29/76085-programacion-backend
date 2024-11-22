@@ -1,0 +1,10 @@
+{
+    "watch": [
+        "src",
+        "views"
+    ],
+    "ext": "js,handlebars,html",
+    "ignore": [
+        "node_modules"
+    ]
+}
