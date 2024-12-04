@@ -89,3 +89,7 @@ const closeChatBox = document.getElementById('closeChatBox')
 closeChatBox.addEventListener('click', evt => {
     socket.disconnect()
 })
+
+
+
+// fetch --> /api/product: POST
