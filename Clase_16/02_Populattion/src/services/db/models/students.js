@@ -39,6 +39,8 @@ const studentSchema = new mongoose.Schema({
 studentSchema.pre('find', function () {
     this.populate("courses.course");
 });
+
+
 const studentsModel = mongoose.model(collectionName, studentSchema);
 export default studentsModel;
 
